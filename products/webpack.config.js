@@ -11,8 +11,8 @@ module.exports = {
       name: 'products',
       filename: 'remoteEntry.js',
       exposes: {
-        './ProductsIndex': './src/index',
-        './ProductsTest': './src/tester'
+        './ProductsIndex': './src/index', // alias to ./ProductsIndex
+        './test': './src/tester'
       }
     }),
     new HtmlWebpackPlugin({
