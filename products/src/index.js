@@ -1,9 +1,9 @@
-import faker from 'faker'
+import { commerce } from 'faker'
 
 let products = ''
 
 for (let i = 0; i < 3; i++) {
-  const name = faker.commerce.productName()
+  const name = commerce.productName()
   products += `<div>${name}</div>`
 }
 
