@@ -24,8 +24,14 @@ const mountProduct = (element) => {
  *    - we are sure we will have a div with class 'products'
  *    - we want to immediately render our app into that element.
  */
-if (process.env.NODE_ENV === '') {
+
+// webpack replaces this env var:
+if (process.env.NODE_ENV === 'development') {
+  const element = document.querySelector('.dev-products');
+  // assuming the container doesn't have an element with class 'dev-products':
+  if (element) mountProduct(element);
 }
+
 /*
  * Context/Situation #2
  * - We are running this sub-project/file in development/production WITHIN container (HOST)
