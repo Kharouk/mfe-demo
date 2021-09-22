@@ -14,6 +14,7 @@ module.exports = {
         './ProductsIndex': './src/index', // alias to ./ProductsIndex
         './test': './src/tester',
       },
+      shared: ['faker'],
     }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
