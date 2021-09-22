@@ -1,12 +1,5 @@
-import { commerce } from 'faker'
+import('./bootstrap');
+// using import() as a function loads asynchronously, so it allows us to use
+// modules like faker independently from the container.
 
-let products = ''
-
-let productTag = document.querySelector('.products')
-
-for (let i = 0; i < 6; i++) {
-  const name = commerce.productName()
-  products += `<div>${name}</div>`
-}
-
-productTag.innerHTML = products
+// giving webpack time to fetch the packages needed to run bootstrap
