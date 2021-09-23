@@ -16,7 +16,7 @@ function Copyright() {
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
       <MaterialLink component={Link} to="/" color="inherit">
-        Your Website
+        SaaSy3 //
       </MaterialLink>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -79,7 +79,7 @@ export default function Album() {
               color="textPrimary"
               gutterBottom
             >
-              Home Page
+              SaaS within #Web3.
             </Typography>
             <Typography
               variant="h5"
@@ -92,7 +92,7 @@ export default function Album() {
               short so folks don&apos;t simply skip over it entirely.
             </Typography>
             <div className={classes.heroButtons}>
-              <Grid container spacing={2} justify="center">
+              <Grid container spacing={2} justifyContent="center">
                 <Grid item>
                   <Link to="/pricing">
                     <Button variant="contained" color="primary">
