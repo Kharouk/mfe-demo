@@ -1,4 +1,5 @@
 import React from 'react';
+import { mount as marketingMount } from 'marketing/App';
 
 export default () => {
   return (
