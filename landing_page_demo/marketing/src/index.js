@@ -1,1 +1,1 @@
-console.log('Inside Marketing!');
+import('./bootstrap');
