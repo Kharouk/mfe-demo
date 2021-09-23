@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 
 const commonConfig = require('./webpack.common');
+const packageJson = require('../package.json'); // allows us to track dependencies that we want to share.
 
 const devConfig = {
   mode: 'development',
@@ -18,7 +19,7 @@ const devConfig = {
       remotes: {
         marketing: 'marketing@http://localhost:8081/remoteEntry.js',
       },
-      shared: ['react', 'react-dom'],
+      shared: packageJson.dependencies,
     }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
