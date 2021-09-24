@@ -19,8 +19,7 @@ jobs:
       - run: npm install
       - run: npm run build
 
-      - name: aws-cli install action
-        uses: chrislennon/action-aws-cli@1.1
+      - uses: chrislennon/action-aws-cli@1.1
       - run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/container/latest
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
