@@ -9,7 +9,7 @@ module.exports = {
     extensions: ['.js', '.vue'],
   },
   module: {
-    // define loaders
+    // define loaders:
     rules: [
       {
         test: /\.(png|jpe?g|gif|woff|svg|eot|ttf)$/i,

@@ -4,7 +4,7 @@ const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPl
 const commonConfig = require('./webpack.common');
 const packageJson = require('../package.json');
 
-const PORT = 8082;
+const PORT = 8083;
 
 const devConfig = {
   mode: 'development',
@@ -16,10 +16,13 @@ const devConfig = {
     historyApiFallback: {
       index: '/index.html', // deals with routing in app
     },
+    headers: {
+      'Access-Control-Allow-Origin': '*', // CORS -> for fonts within the container
+    },
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'auth',
+      name: 'dashboard',
       filename: 'remoteEntry.js',
       exposes: {
         './App': './src/bootstrap',
