@@ -4,13 +4,17 @@ import { createBrowserHistory, createMemoryHistory } from 'history';
 import App from './App';
 
 // Mount function to start up app:
-const mount = (el, { onNavigate, defaultHistory, initialPath }) => {
+const mount = (
+  el,
+  { onAuthChange, onNavigate, defaultHistory, initialPath }
+) => {
   const history =
     defaultHistory ||
     createMemoryHistory({
       initialEntries: [initialPath],
     }); // if local dev, use default BROWSER history
 
+  if (onAuthChange) onAuthChange();
   if (onNavigate) history.listen(onNavigate);
 
   ReactDOM.render(<App history={history} />, el);

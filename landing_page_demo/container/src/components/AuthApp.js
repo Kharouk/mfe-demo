@@ -13,6 +13,9 @@ export default () => {
         const { pathname } = history.location;
         if (pathname !== nextPathname) history.push(nextPathname);
       },
+      onAuthChange: () => {
+        console.log('authorise NOW');
+      },
     });
 
     history.listen(onParentNavigate);
