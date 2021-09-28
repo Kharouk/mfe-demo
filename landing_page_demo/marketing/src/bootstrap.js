@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createMemoryHistory } from 'history';
+import { createBrowserHistory, createMemoryHistory } from 'history';
 import App from './App';
 
 // Mount function to start up app:
-const mount = (el, { onNavigate }) => {
-  const history = createMemoryHistory();
+const mount = (el, { onNavigate, defaultHistory }) => {
+  const history = defaultHistory || createMemoryHistory(); // if local dev, use default BROWSER history
 
   if (onNavigate) history.listen(onNavigate);
 
@@ -22,7 +22,7 @@ const mount = (el, { onNavigate }) => {
 // Dev or isolation, call mount immediately:
 if (process.env.NODE_ENV === 'development') {
   const devRoot = document.querySelector('#_marketing-root');
-  if (devRoot) mount(devRoot, {});
+  if (devRoot) mount(devRoot, { defaultHistory: createBrowserHistory() });
 }
 
 // we are running through container so export mount:
