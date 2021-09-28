@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { StylesProvider, createGenerateClassName } from '@material-ui/styles';
 
 import Header from './components/Header';
+import Progress from './components/Progress';
 // Lazy loads all the micro-projects into this main App file:
 
 // import AuthApp from './components/AuthApp';
@@ -20,7 +21,7 @@ export default () => {
     <BrowserRouter>
       <StylesProvider generateClassName={generateClassName}>
         <Header />
-        <Suspense fallback={<div>Alright, alright it's loading...</div>}>
+        <Suspense fallback={<Progress />}>
           <Switch>
             <Route path="/auth" component={AuthApp} />
             <Route path="/" component={MarketingApp} />

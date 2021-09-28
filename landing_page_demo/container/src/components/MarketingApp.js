@@ -5,6 +5,7 @@ import { mount } from 'marketing/App';
 export default () => {
   const ref = useRef(null);
   const history = useHistory();
+
   useEffect(() => {
     const { onParentNavigate } = mount(ref.current, {
       initialPath: history.location.pathname,
