@@ -18,8 +18,8 @@ export default ({ history }) => {
       <StylesProvider generateClassName={generateClassName}>
         <Router history={history}>
           <Switch>
-            <Route exact path="/auth/signup" component={SignUp} />
-            <Route path="/" component={SignIn} />
+            <Route path="/auth/signin" component={SignIn} />
+            <Route path="/auth/signup" component={SignUp} />
           </Switch>
         </Router>
       </StylesProvider>

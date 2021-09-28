@@ -3,13 +3,18 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 
 const commonConfig = require('./webpack.common');
+const packageJson = require('../package.json');
+const PORT = 8082;
 
 const devConfig = {
   mode: 'development',
+  output: {
+    publicPath: `http://localhost:${PORT}/`,
+  },
   devServer: {
-    port: 8082,
+    port: PORT,
     historyApiFallback: {
-      index: 'index.html', // deals with routing in app
+      index: '/index.html', // deals with routing in app
     },
   },
   plugins: [
@@ -19,6 +24,7 @@ const devConfig = {
       exposes: {
         './Auth': './src/bootstrap',
       },
+      shared: packageJson.dependencies,
     }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
