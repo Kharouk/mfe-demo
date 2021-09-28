@@ -10,6 +10,7 @@ import Progress from './components/Progress';
 const AuthApp = lazy(() => import('./components/AuthApp'));
 // import MarketingApp from './components/MarketingApp';
 const MarketingApp = lazy(() => import('./components/MarketingApp'));
+const DashboardApp = lazy(() => import('./components/DashboardApp'));
 
 // generates more unique classnames so that we don't have collisions with MUI
 const generateClassName = createGenerateClassName({
@@ -31,6 +32,7 @@ export default () => {
               path="/auth"
               render={() => <AuthApp onSignedIn={() => setIsSignedIn(true)} />}
             />
+            <Route path="/dashboard" component={DashboardApp} />
             <Route path="/" component={MarketingApp} />
           </Switch>
         </Suspense>
