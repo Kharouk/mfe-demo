@@ -1,6 +1,5 @@
 const { merge } = require('webpack-merge'); // merges webpack files
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
-
 const commonConfig = require('./webpack.common');
 const packageJson = require('../package.json'); // allows us to track dependencies that we want to share.
 
@@ -14,7 +13,7 @@ const devConfig = {
   devServer: {
     port: PORT,
     historyApiFallback: {
-      index: 'index.html', // deals with routing in app
+      index: '/index.html', // deals with routing in app
     },
   },
   plugins: [
