@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createMemoryHistory } from 'history';
 import App from './App';
-
-console.log('Inside Marketing!');
 
 // Mount function to start up app:
 const mount = (el) => {
-  ReactDOM.render(<App />, el);
+  const history = createMemoryHistory();
+
+  ReactDOM.render(<App history={history} />, el);
 };
 
 // Dev or isolation, call mount immediately:
