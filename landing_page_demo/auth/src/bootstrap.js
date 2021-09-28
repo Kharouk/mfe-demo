@@ -11,6 +11,7 @@ const mount = (el, { onSignIn, onNavigate, defaultHistory, initialPath }) => {
       initialEntries: [initialPath],
     }); // if local dev, use default BROWSER history
 
+  // have history call onNavigate whenever called
   if (onNavigate) history.listen(onNavigate);
 
   ReactDOM.render(<App history={history} onSignIn={onSignIn} />, el);
