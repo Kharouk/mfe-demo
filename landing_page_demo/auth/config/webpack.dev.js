@@ -22,7 +22,7 @@ const devConfig = {
       name: 'auth',
       filename: 'remoteEntry.js',
       exposes: {
-        './Auth': './src/bootstrap',
+        './App': './src/bootstrap',
       },
       shared: packageJson.dependencies,
     }),

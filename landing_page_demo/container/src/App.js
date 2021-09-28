@@ -18,8 +18,8 @@ export default () => {
       <StylesProvider generateClassName={generateClassName}>
         <Header />
         <Switch>
-          <Route />
-          <Route />
+          <Route path="/auth" component={AuthApp} />
+          <Route path="/" component={MarketingApp} />
         </Switch>
       </StylesProvider>
     </BrowserRouter>
