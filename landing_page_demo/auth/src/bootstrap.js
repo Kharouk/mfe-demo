@@ -11,6 +11,7 @@ const mount = (el, { onNavigate, defaultHistory }) => {
 
   ReactDOM.render(<App history={history} />, el);
 
+  // return this object with onParentNavigate function so we let auth know container has changed paths
   return {
     onParentNavigate({ pathname: nextPathname }) {
       const { pathname } = history.location;
